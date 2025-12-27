@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Places</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background-image: url('image copy.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    header h1 {
+      font-size: 2em;
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #005599;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
+
+    .intro {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    .place-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .place-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .place-icon {
+      background-color: #005599;
+      color: white;
+      font-size: 4em;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .place-info {
+      padding: 20px;
+    }
+
+    .place-info h3 {
+      color: #003366;
+      margin-bottom: 10px;
+      font-size: 1.4em;
+    }
+
+    .place-info p {
+      color: #555;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .place-details {
+      font-size: 0.9em;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .place-details strong {
+      color: #003366;
+    }
+
+    .view-map-btn {
+      display: inline-block;
+      background-color: #005599;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .view-map-btn:hover {
+      background-color: #003366;
+    }
+
+    .category-section {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .category-section h2 {
+      color: #003366;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.8em;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .places-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>City Places & Landmarks</h1>
+    <nav>
+      <a href="citymang.html">Home</a>
+      <a href="cont.html">Contact</a>
+      <a href="eme.html">Emergency</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>🗺️ Discover Our City</h2>
+      <p>Explore important places, landmarks, and facilities in our smart city. Find everything you need in one place.</p>
+    </section>
+
+    <section class="category-section">
+      <h2>🏛️ Government & Public Services</h2>
+      <div class="places-grid">
+        <div class="place-card">
+          <div class="place-icon">🏛️</div>
+          <div class="place-info">
+            <h3>City Hall</h3>
+            <p>Main administrative building for all municipal services and city government offices.</p>
+            <div class="place-details"><strong>📍 Address:</strong> 123 Main Street, City Center</div>
+            <div class="place-details"><strong>🕒 Hours:</strong> Mon-Fri, 9:00 AM - 5:00 PM</div>
+            <div class="place-details"><strong>📞 Phone:</strong> +91 123 456 7890</div>
+            <a href="#" class="view-map-btn">View on Map</a>
+          </div>
+        </div>
+
+        <div class="place-card">
+          <div class="place-icon">👮</div>
+          <div class="place-info">
+            <h3>Police Headquarters</h3>
+            <p>Central police station and law enforcement command center.</p>
+            <div class="place-details"><strong>📍 Address:</strong> 45 Justice Road</div>
+            <div class="place-details"><strong>🕒 Hours:</strong> 24/7</div>
+            <div class="place-details"><strong>📞 Emergency:</strong> 112</div>
+            <a href="#" class="view-map-btn">View on Map</a>
+          </div>
+        </div>
+
+        <div class="place-card">
+          <div class="place-icon">🏥</div>
+          <div class="place-info">
+            <h3>City General Hospital</h3>
+            <p>Multi-specialty hospital with emergency and outpatient services.</p>
+            <div class="place-details"><strong>📍 Address:</strong> 78 Health Avenue</div>
+            <div class="place-details"><strong>🕒 Hours:</strong> 24/7 Emergency</div>
+            <div class="place-details"><strong>📞 Phone:</strong> +91 123 456 7891</div>
+            <a href="#" class="view-map-btn">View on Map</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>🎓 Education & Culture</h2>
+      <div class="places-grid">
+        <div class="place-card">
+          <div class="place-icon">📚</div>
+          <div class="place-info">
+            <h3>Central Library</h3>
+            <p>Public library with vast collection of books, digital resources, and study spaces.</p>
+            <div class="place-details"><strong>📍 Address:</strong> 12 Knowledge Street</div>
+            <div class="place-details"><strong>🕒 Hours:</strong> Mon-Sat, 9:00 AM - 8:00 PM</div>
+            <div class="place-details"><strong>📞 Phone:</strong> +91 123 456 7892</div>
+            <a href="#" class="view-map-btn">View on Map</a>
+          </div>
+        </div>
+
+        <div class="place-card">
+          <div class="place-icon">🎨</div>
+          <div class="place-info">
+            <h3>City Art Museum</h3>
+            <p>Contemporary and traditional art gallery showcasing local and international artists.</p>
+            <div class="place-details"><strong>📍 Address:</strong> 56 Culture Boulevard</div>
+            <div class="place-details"><strong>🕒 Hours:</strong> Tue-Sun, 10:00 AM - 6:00 PM</div>
+            <div class="place-details"><strong>📞 Phone:</strong> +91 123 456 7893</div>
+            <a href="#" class="view-map-btn">View on Map</a>
+          </div>
+        </div>
+
+        <div class="place-card">
+          <div class="place-icon">🏫</div>
+          <div class="place-info">
+            <h3>City University</h3>
+            <p>Premier educational institution offering diverse academic programs.</p>
+            <div class="place-details"><strong>📍 Address:</strong> University Campus, Zone A</div>
+            <div class="place-details"><strong>🕒 Hours:</strong> Mon-Fri, 8:00 AM - 6:00 PM</div>
+            <div class="place-details"><strong>📞 Phone:</strong> +91 123 456 7894</div>
+            <a href="#" class="view-map-btn">View on Map</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>🌳 Parks & Recreation</h2>
+      <div class="places-grid">
+        <div class="place-card">
+          <div class="place-icon">🌳</div>
+          <div class="place-info">
+            <h3>Central Park</h3>
+            <p>Large urban park with walking trails, playgrounds, and picnic areas.</p>
+            <div class="place-details"><strong>📍 Address:</strong> Park Avenue, City Center</div>
+            <div class="place-details"><strong>🕒 Hours:</strong> 6:00 AM - 9:00 PM</div>
+            <div class="place-details"><strong>📞 Phone:</strong> +91 123 456 7895</div>
+            <a href="#" class="view-map-btn">View on Map</a>
+          </div>
+        </div>
+
+        <div class="place-card">
+          <div class="place-icon">🏟️</div>
+          <div class="place-info">
+            <h3>City Sports Complex</h3>
+            <p>Multi-purpose stadium with facilities for various sports and events.</p>
+            <div class="place-details"><strong>📍 Address:</strong> 90 Stadium Road</div>
+            <div class="place-details"><strong>🕒 Hours:</strong> 6:00 AM - 10:00 PM</div>
+            <div class="place-details"><strong>📞 Phone:</strong> +91 123 456 7896</div>
+            <a href="#" class="view-map-btn">View on Map</a>
+          </div>
+        </div>
+
+        <div class="place-card">
+          <div class="place-icon">🎪</div>
+          <div class="place-info">
+            <h3>Convention Center</h3>
+            <p>Modern venue for conferences, exhibitions, and community events.</p>
+            <div class="place-details"><strong>📍 Address:</strong> 34 Convention Plaza</div>
+            <div class="place-details"><strong>🕒 Hours:</strong> By Appointment</div>
+            <div class="place-details"><strong>📞 Phone:</strong> +91 123 456 7897</div>
+            <a href="#" class="view-map-btn">View on Map</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>🚉 Transportation Hubs</h2>
+      <div class="places-grid">
+        <div class="place-card">
+          <div class="place-icon">🚉</div>
+          <div class="place-info">
+            <h3>Central Railway Station</h3>
+            <p>Main railway terminus connecting to major cities across the region.</p>
+            <
