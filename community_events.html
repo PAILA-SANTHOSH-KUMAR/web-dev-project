@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Events</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background-image: url('image copy.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      line-height: 1.6;
+    }
+
+    header h1 {
+      font-size: 2em;
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #005599;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
+
+    .intro-section {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .intro-section h2 {
+      color: #003366;
+      margin-bottom: 15px;
+      font-size: 1.8em;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .event-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .event-card h3 {
+      color: #003366;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .event-icon {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .event-date {
+      color: #005599;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .event-location {
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .event-description {
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .register-btn {
+      display: inline-block;
+      background-color: #005599;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .register-btn:hover {
+      background-color: #003366;
+    }
+
+    .calendar-section {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .calendar-section h2 {
+      color: #003366;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      text-align: center;
+    }
+
+    .calendar-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .calendar-list li {
+      padding: 15px;
+      border-left: 4px solid #005599;
+      margin-bottom: 15px;
+      background-color: rgba(240, 248, 255, 0.5);
+      border-radius: 5px;
+    }
+
+    .submit-event-section {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .submit-event-section h2 {
+      color: #003366;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      text-align: center;
+    }
+
+    .event-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .event-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #003366;
+    }
+
+    .event-form input,
+    .event-form select,
+    .event-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    .event-form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #005599;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .event-form button:hover {
+      background-color: #003366;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #003366;
+      color: white;
+      padding: 10px;
+      font-size: 0.9em;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Community Events</h1>
+    <nav>
+      <a href="citymang.html">Home</a>
+      <a href="cont.html">Contact</a>
+      <a href="eme.html">Emergency</a>
+      <a href="news.html">News</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro-section">
+      <h2>Welcome to Community Events</h2>
+      <p>Stay connected with your community! Explore upcoming events, festivals, workshops, and activities. Join us in making our city vibrant and inclusive.</p>
+    </section>
+
+    <section class="events-grid">
+      <div class="event-card">
+        <div class="event-icon">🎭</div>
+        <h3>Cultural Festival 2025</h3>
+        <div class="event-date">📅 January 15, 2025 | 10:00 AM - 8:00 PM</div>
+        <div class="event-location">📍 City Central Park</div>
+        <p class="event-description">Join us for a day of cultural performances, food stalls, and traditional crafts. Celebrate diversity and unity in our community.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+
+      <div class="event-card">
+        <div class="event-icon">🏃</div>
+        <h3>Smart City Marathon</h3>
+        <div class="event-date">📅 February 5, 2025 | 6:00 AM - 12:00 PM</div>
+        <div class="event-location">📍 Stadium Road</div>
+        <p class="event-description">Participate in our annual marathon promoting health and fitness. Categories for all age groups. Free health checkups included.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+
+      <div class="event-card">
+        <div class="event-icon">🌱</div>
+        <h3>Green City Workshop</h3>
+        <div class="event-date">📅 January 20, 2025 | 2:00 PM - 5:00 PM</div>
+        <div class="event-location">📍 Community Hall</div>
+        <p class="event-description">Learn about sustainable living, waste management, and urban gardening. Free saplings for all participants.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+
+      <div class="event-card">
+        <div class="event-icon">🎨</div>
+        <h3>Art Exhibition</h3>
+        <div class="event-date">📅 January 25-30, 2025 | 10:00 AM - 6:00 PM</div>
+        <div class="event-location">📍 City Art Gallery</div>
+        <p class="event-description">Explore works by local artists. Paintings, sculptures, and digital art on display. Open to all ages.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+
+      <div class="event-card">
+        <div class="event-icon">💻</div>
+        <h3>Tech Talk: Smart Cities</h3>
+        <div class="event-date">📅 February 10, 2025 | 4:00 PM - 7:00 PM</div>
+        <div class="event-location">📍 Innovation Center</div>
+        <p class="event-description">Industry experts discuss IoT, AI, and technology in urban development. Networking opportunities available.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+
+      <div class="event-card">
+        <div class="event-icon">🎵</div>
+        <h3>Music in the Park</h3>
+        <div class="event-date">📅 February 14, 2025 | 5:00 PM - 9:00 PM</div>
+        <div class="event-location">📍 Riverside Park</div>
+        <p class="event-description">Evening concert featuring local bands and musicians. Bring your family for a relaxing evening under the stars.</p>
+        <a href="#" class="register-btn">Register Now</a>
+      </div>
+    </section>
+
+    <section class="calendar-section">
+      <h2>📆 Upcoming Events Calendar</h2>
+      <ul class="calendar-list">
+        <li><strong>January 15:</strong> Cultural Festival 2025 - City Central Park</li>
+        <li><strong>January 20:</strong> Green City Workshop - Community Hall</li>
+        <li><strong>January 25-30:</strong> Art Exhibition - City Art Gallery</li>
+        <li><strong>February 5:</strong> Smart City Marathon - Stadium Road</li>
+        <li><strong>February 10:</strong> Tech Talk: Smart Cities - Innovation Center</li>
+        <li><strong>February 14:</strong> Music in the Park - Riverside Park</li>
+        <li><strong>February 20:</strong> Health & Wellness Fair - City Hospital Grounds</li>
+        <li><strong>March 1:</strong> Food Festival - Market Square</li>
+      </ul>
+    </section>
+
+    <section class="submit-event-section">
+      <h2>Submit Your Event</h2>
+      <p style="text-align: center; margin-bottom: 20px;">Organize a community event? Share it with us and we'll help spread the word!</p>
+      
+      <form class="event-form">
+        <label for="event-name">Event Name:</label>
+        <input type="text" id="event-name" name="event-name" required placeholder="Enter event name">
+
+        <label for="organizer">Organizer Name:</label>
+        <input type="text" id="organizer" name="organizer" required placeholder="Your name or organization">
+
+        <label for="email">Contact Email:</label>
+        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+
+        <label for="phone">Contact Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91 XXXXXXXXXX">
+
+        <label for="event-date">Event Date:</label>
+        <input type="date" id="event-date" name="event-date" required>
+
+        <label for="event-time">Event Time:</label>
+        <input type="time" id="event-time" name="event-time" required>
+
+        <label for="location">Event Location:</label>
+        <input type="text" id="location" name="location" required placeholder="Venue or address">
+
+        <label for="category">Event Category:</label>
+        <select id="category" name="category" required>
+          <option value="">-- Select Category --</option>
+          <option value="cultural">Cultural</option>
+          <option value="sports">Sports & Fitness</option>
+          <option value="education">Educational</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="social">Social</option>
+          <option value="health">Health & Wellness</option>
+          <option value="technology">Technology</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="description">Event Description:</label>
+        <textarea id="description" name="description" rows="5" required placeholder="Describe your event..."></textarea>
+
+        <button type="submit">Submit Event</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 City Management Portal. All rights reserved.
+  </footer>
+
+  <script>
+    document.querySelector('.event-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for submitting your event! Our team will review it and contact you shortly.');
+      this.reset();
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          if (this.getAttribute('href') !== '#') {
+            alert('You are being redirected to ' + this.textContent);
+          }
+        });
+      });
+
+      const registerButtons = document.querySelectorAll('.register-btn');
+      registerButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+          const eventName = this.closest('.event-card').querySelector('h3').textContent;
+          alert('Registration for "' + eventName + '" will open soon. Thank you for your interest!');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
