@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City </title>
+    <style>
+        .login-form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px ;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .login-form h2 {
+            margin-bottom: 20px;
+        }   
+        .login-form label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            color: rgb(0, 0, 0);
+            margin-bottom: 10px;
+            border: 1px ;
+            border-radius: 3px;
+        }
+        .login-form .remember {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .login-form .captcha {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .login-form .links {
+            margin-bottom: 10px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #530d0a;
+            color: rgb(227, 223, 223);
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #45a049;
+        }
+        .remember input[type="checkbox"] {
+            margin-right: 5px;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body style="background-image: url('image\ copy.png'); background-repeat: no-repeat; background-size: cover;">
+    <form action="citymang.html">
+        <link rel="next-page" href="citymang.html">
+    <div class="login-form"style="text-align: center;">
+      <h2 style="text-align: center; color: aliceblue;">Login</h2>
+      <label for="username" style="color: aliceblue;"><strong>Enter Username *</strong></label>
+      <input type="text" id="username" placeholder="Username" required />
+      <small style="color: aliceblue;">Username cannot be blank</small>
+      <label for="password" style="color: rgb(249, 245, 245);"><strong>Enter Password *</strong></label>
+      <input type="password" id="password" placeholder="Password" required />
+
+      <div class="remember">
+       <input type="checkbox" id="remember" placeholder="Remember Me"/>Remember Me
+      </div>
+
+      <div class="captcha">jatinfu</div>
+      <label for="captcha" style="color: aliceblue;">Enter Verification Code</label>
+      <input type="text" id="captcha" placeholder="Verification Code" />
+
+      <div class="links">
+        <a href="#">Forgot Password? </a> <br> 
+         <a href="#">CITIZENSHIP REGISTRATION</a><br>
+        <a href="#" style="text-align: center;">AUTHORITY Registration</a>
+      </div>
+
+      <button type="submit">Login</button>
+    </div>
+    </form>
+    <script>
+
+        document.querySelector('.login-form').addEventListener('submit', function(event) {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var captcha = document.getElementById('captcha').value;
+            var validCaptcha = 'jatinfu';
+    
+            if (username === '' || password === '') {
+                alert('Username and Password cannot be blank.');
+                event.preventDefault();
+            } else if (captcha !== validCaptcha) {
+                alert('Incorrect verification code.');
+                event.preventDefault();
+            }
+        });
+        document.querySelector('.login-form').addEventListener('reset', function() {
+            
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('captcha').value = '';
+        });
+        document.getElementById('username').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('password').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('captcha').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value === 'jatinfu') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('remember').addEventListener('change', function() {
+            if (this.checked) {
+                console.log('Remember Me checked');
+            } else {
+                console.log('Remember Me unchecked');
+            }
+        });
+        document.querySelector('.login-form button[type="submit"]').addEventListener('click', function() {
+            console.log('Login button clicked');
+        });
+        document.querySelector('.login-form button[type="reset"]').addEventListener('click', function() {
+            console.log('Reset button clicked');
+        });
+        document.querySelector('#budget form').addEventListener('reset', function() {
+            document.getElementById('dept').value = '';
+            document.getElementById('message').value = '';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legislative Affairs</title>
+  <link rel="stylesheet" href="legis.css">
+</head>
+<body style="background-image: url(image\ copy.png);background-size: cover;">
+  <header>
+    <h1 style="text-align: center; background-color: #003366; color: white; padding: 20px;">
+      Legislative Affairs
+    </h1>
+    <nav style="text-align: center; background-color: #005599; padding: 10px;">
+      <a href="index.html" style="color: white; margin: 0 15px;">Home</a>
+      <a href="cont.html" style="color: white; margin: 0 15px;">Contact</a>
+      <a href="eme.html" style="color: white; margin: 0 15px;">Emergency</a>
+    </nav>
+  </header>
+
+  <main style="padding: 20px;">
+    <section>
+      <h2>City Council Overview</h2>
+      <p>The City Council is responsible for passing local laws, approving budgets, and representing the interests of residents. Council meetings are held monthly and are open to the public.</p>
+    </section>
+
+    <section>
+      <h2>Recent Legislation</h2>
+      <ul>
+        <li>📜 Ordinance 2025-01: Waste Management Reform</li>
+        <li>📜 Resolution 2025-02: Smart City Infrastructure Funding</li>
+        <li>📜 Bill 2025-03: Public Safety Enhancement Act</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Public Participation</h2>
+      <p>Residents are encouraged to attend council meetings, submit feedback, and participate in public hearings. Your voice matters in shaping our city's future.</p>
+      <a href="req.html" style="display: inline-block; margin-top: 10px; background-color: #005599; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Submit Feedback</a>
+    </section>
+  </main>
+
+  <footer style="text-align: center; background-color: #003366; color: white; padding: 10px;">
+    &copy; 2025 City Management Portal. All rights reserved.
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          alert('You are being redirected to ' + this.textContent);
+        });
+      });
+    });
+    document.querySelector('#budget form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your submission! We will review your inquiry or suggestion.');
+    });
+    document.querySelector('.login-form').addEventListener('submit', function(event) {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var captcha = document.getElementById('captcha').value;
+            
+        });
+        document.querySelector('.emergency-form form').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      alert('Thank you for reporting the emergency. Authorities will be notified shortly.');
+    });
+        document.querySelector('.login-form').addEventListener('reset', function() {
+          
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('captcha').value = '';
+        });
+        document.getElementById('username').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }   
+        });
+        document.getElementById('password').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('captcha').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value === 'jatinfu') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+
+      
+  </script>
+</body>
+</html>

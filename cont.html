@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contact-details {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .contact-details h3 {
+            margin-top: 0;
+            color: #530d0a;
+        }
+        .contact-details p {
+            margin: 5px 0 15px 0;
+        }
+        .contact-details a {
+            color: #530d0a;
+            text-decoration: none;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body style="background-image: url('image\ copy.png'); background-repeat: no-repeat; background-size: cover;">
+    <div class="contact-details">
+  <h3>📍 Address</h3>
+  <p>KL UNIVERSITY, Tech Street, Tadepalli, VIJAYAWADA, Andhra Pradesh, India</p>
+
+  <h3>📞 Phone</h3>
+  <p>+91 8303302855 <br>+91 94728 56006 <br>+91 98487 85406</p>
+<picture>
+    <source media="(min-width: )" srcset="">
+    <img src="" alt="">
+</picture>
+  <h3>📧 Email</h3>
+  <p><a href="#">adarshk8303@gmail.com</a></p>
+
+  <h3>🌐 Website</h3>
+  <p><a href="https://www.smartsity.com" target="_blank">www.smartsitymanegment.com</a></p>
+
+  <h3>🕒 Office Hours</h3>
+  <p>Monday to Friday: 9:00 AM – 6:00 PM</p>
+</div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          alert('You are being redirected to ' + this.textContent);
+        });
+      });
+    });
+    document.querySelector('#budget form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your submission! We will review your inquiry or suggestion.');
+    });
+    document.querySelector('.login-form').addEventListener('submit', function(event) {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var captcha = document.getElementById('captcha').value;
+        var validCaptcha = 'jatinfu';
+
+        if (username === '' || password === '') {
+            alert('Username and Password cannot be blank.');
+            event.preventDefault();
+        } else if (captcha !== validCaptcha) {
+            alert('Incorrect verification code. Please try again.');
+            event.preventDefault();
+        }
+    });
+    document.querySelector('.login-form').addEventListener('reset', function() {
+     
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+      document.getElementById('captcha').value = '';
+    });
+    document.getElementById('username').addEventListener('input', function() {
+      var small = this.nextElementSibling;
+      if (this.value !== '') {
+          small.style.display = 'none';
+      } else {
+          small.style.display = 'block';
+      }
+    });
+    document.getElementById('password').addEventListener('input', function() {
+      var small = this.nextElementSibling;
+      if (this.value !== '') {
+          small.style.display = 'none';
+      } else {
+          small.style.display = 'block';
+      }
+    });
+    document.getElementById('captcha').addEventListener('input', function() {
+      var small = this.nextElementSibling;
+      if (this.value === 'jatinfu') {
+          small.style.display = 'none';
+      } else {
+          small.style.display = 'block';
+      }
+    });
+    document.getElementById('remember').addEventListener('change', function() {
+      if (this.checked) {
+          console.log('Remember Me checked');
+      } else {
+          console.log('Remember Me unchecked');
+      }
+    });
+    document.querySelector('#budget form').addEventListener('reset', function() {
+      document.getElementById('dept').value = '';
+      document.getElementById('message').value = '';
+    });
+    document.querySelector('.login-form button[type="submit"]').addEventListener('click', function() {
+      console.log('Login button clicked');
+    });
+    document.querySelector('.login-form button[type="reset"]').addEventListener('click', function() {
+      console.log('Reset button clicked');
+    });
+    document.querySelector('#budget form').addEventListener('reset', function() {
+      document.getElementById('dept').value = '';
+      document.getElementById('message').value = '';
+    });
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="licen.css">
+</head>
+<body style="background-image: url('image\ copy.png'); background-repeat: no-repeat; background-size: cover;">
+    <section id="licensing">
+  <h2>Licensing & Permitting</h2>
+  <p>Apply for city licenses and permits, or check the status of your application.</p>
+
+  <form>
+    <div>
+      <label for="type">Permit Type:</label>
+      <select id="type" name="type">
+        <option value="">--Select--</option>
+        <option value="business">Business License</option>
+        <option value="construction">Construction Permit</option>
+        <option value="event">Event Permit</option>
+        <option value="vendor">Vendor License</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="name">Applicant Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" />
+    </div>
+
+    <div>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" />
+    </div>
+
+    <div>
+      <label for="details">Application Details:</label>
+      <textarea id="details" name="details" rows="4" placeholder="Provide relevant information..."></textarea>
+    </div>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</section>
+<script>
+    document.querySelector('#licensing form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your application! We will process it and get back to you shortly.');
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          alert('You are being redirected to ' + this.textContent);
+        });
+      });
+    });
+    document.querySelector('#budget form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your submission! We will review your inquiry or suggestion.');
+    });
+</script>
+</body>
+</html>

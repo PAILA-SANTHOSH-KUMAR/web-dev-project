@@ -1,0 +1,191 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background-image: url('image copy.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#emergency-management {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  max-width: 800px;
+  margin: 50px auto;
+  border-radius: 10px;
+}
+
+#emergency-management h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#emergency-management h3 {
+  margin-top: 30px;
+  font-size: 1.5em;
+}
+
+#emergency-management p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.emergency-links ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.emergency-links li {
+  margin: 10px 0;
+}
+
+.emergency-links a {
+  text-decoration: none;
+  color: #00ffff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.emergency-links a:hover {
+  color: #ffcc00;
+}
+
+.emergency-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.emergency-form label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.emergency-form input,
+.emergency-form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.emergency-form input:focus,
+.emergency-form textarea:focus {
+  outline: 2px solid #00ffff;
+}
+
+.emergency-form button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #00ffff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.emergency-form button:hover {
+  background-color: #ffcc00;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background-image: url('image copy.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#emergency-management {
+  background-color: rgba(0, 0, 0, 0.6); 
+  padding: 40px;
+  max-width: 800px;
+  margin: 50px auto;
+  border-radius: 10px;
+}
+
+#emergency-management h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#emergency-management h3 {
+  margin-top: 30px;
+  font-size: 1.5em;
+}
+
+#emergency-management p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.emergency-links ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.emergency-links li {
+  margin: 10px 0;
+}
+
+.emergency-links a {
+  text-decoration: none;
+  color: #00ffff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.emergency-links a:hover {
+  color: #ffcc00;
+}
+
+.emergency-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.emergency-form label {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.emergency-form input,
+.emergency-form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.emergency-form input:focus,
+.emergency-form textarea:focus {
+  outline: 2px solid #00ffff;
+}
+
+.emergency-form button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #00ffff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.emergency-form button:hover {
+  background-color: #ffcc00;
+}

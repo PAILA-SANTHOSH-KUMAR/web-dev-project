@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="eme.css">
+</head>
+<body style="background-image: url(image\ copy.png);background-size: cover;">
+    <section id="emergency-management">
+  <h2>Emergency Management</h2>
+  <p>Stay informed and prepared for emergencies in our city. Access resources, alerts, and safety tips to protect yourself and your community.</p>
+
+  <div class="emergency-links">
+    <ul>
+      <li><a href="alerts.html">🚨 - 112 — All-in-one emergency number for police, fire, and ambulance services across India
+</a></li>
+      <li><a href="safety.html">🛡️ Safety Guidelines</a></li>
+      <li><a href="shelters.html">🏠 Find Emergency Shelters</a></li>
+      <li><a href="contacts.html">📞 Emergency Contacts</a></li>
+      <li><a href="volunteer.html">🤝 Volunteer Opportunities</a></li>
+    </ul>
+  </div>
+
+  <div class="emergency-form">
+    <h3>Report an Emergency</h3>
+    <form>
+      <label for="reporter">Your Name:</label>
+      <input type="text" id="reporter" name="reporter" placeholder="Enter your name" required>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" placeholder="Enter location of emergency" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" rows="4" placeholder="Describe the emergency..." required></textarea>
+
+      <button type="submit">Submit Report</button>
+    </form>
+  </div>
+</section>
+<script>
+    document.querySelector('.emergency-form form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for reporting the emergency. Authorities will be notified shortly.');
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          alert('You are being redirected to ' + this.textContent);
+        });
+      });
+    });
+    document.querySelector('#budget form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your submission! We will review your inquiry or suggestion.');
+    });
+    document.querySelector('.login-form').addEventListener('submit', function(event) {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var captcha = document.getElementById('captcha').value;
+            var validCaptcha = 'jatinfu';
+    
+            if (username === '' || password === '') {
+                alert('Username and Password cannot be blank.');
+                event.preventDefault();
+            } else if (captcha !== validCaptcha) {
+                alert('Incorrect verification code.');
+                event.preventDefault();
+            }
+        });
+        document.querySelector('.login-form').addEventListener('reset', function() {
+           
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('captcha').value = '';
+        });
+        document.getElementById('username').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }   
+        });
+        document.getElementById('password').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('captcha').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value === 'jatinfu') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('remember').addEventListener('change', function() {
+            if (this.checked) {
+                console.log('Remember Me checked');
+            } else {
+                console.log('Remember Me unchecked');
+            }
+        });
+        document.querySelector('#budget form').addEventListener('reset', function() {
+            document.getElementById('dept').value = '';
+            document.getElementById('message').value = '';
+        });
+
+</script>
+</body>
+</html>

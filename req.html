@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .request-service {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 50px auto;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .request-service h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .service-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .service-form input,
+        .service-form select,
+        .service-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .service-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #530d0a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .service-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body style="background-image: url('image\ copy.png'); background-repeat: no-repeat; background-size: cover;">
+    <section class="request-service">
+  <h2>📝 Request a City Service</h2>
+  <form action="#" method="post" class="service-form">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="service-type">Type of Service:</label>
+    <select id="service-type" name="service-type" required>
+      <option value="">-- Select a Service --</option>
+      <option value="garbage">Garbage Pickup</option>
+      <option value="streetlight">Streetlight Repair</option>
+      <option value="water">Water Supply Issue</option>
+      <option value="road">Road Maintenance</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="description">Description of Issue:</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <button type="submit">Submit Request</button>
+  </form>
+</section>
+<script>
+    document.querySelector('.service-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your request! We will address the issue as soon as possible.');
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          alert('You are being redirected to ' + this.textContent);
+        });
+      });
+    });
+    document.querySelector('#budget form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your submission! We will review your inquiry or suggestion.');
+    });
+    document.querySelector('.login-form').addEventListener('submit', function(event) {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var captcha = document.getElementById('captcha').value;
+            var validCaptcha = 'jatinfu';
+    
+            if (username === '' || password === '') {
+                alert('Username and Password cannot be blank.');
+                event.preventDefault();
+            } else if (captcha !== validCaptcha) {
+                alert('Incorrect verification code.');
+                event.preventDefault();
+            }
+        });
+        document.querySelector('.login-form').addEventListener('reset', function() {
+          
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('captcha').value = '';
+        });
+        document.getElementById('username').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }   
+        });
+        document.getElementById('password').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('captcha').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value === 'jatinfu') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('remember').addEventListener('change', function() {
+            if (this.checked) {
+                alert('You will be remembered on this device.');
+            } else {
+                alert('You will not be remembered on this device.');
+            }
+        });
+        document.querySelector('#budget form').addEventListener('reset', function() {
+        });
+</script>
+</body>
+</html>

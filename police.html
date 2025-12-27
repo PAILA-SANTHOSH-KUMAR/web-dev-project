@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Police Department</title>
+  <link rel="stylesheet" href="police.css">
+</head>
+<body style="background-image: url('image\ copy.png'); background-repeat: no-repeat; background-size: cover;">
+  <section>
+  <h2>Police Complaints</h2>
+  <form action="submit_form.php" method="post" style="background-color: rgba(255,255,255,0.8); padding: 20px; border-radius: 10px;">
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" placeholder="Your name" required><br><br>
+
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" placeholder="Your email" required><br><br>
+
+    <label for="phone">Phone Number:</label><br>
+    <input type="tel" id="phone" name="phone" placeholder="Your phone number"><br><br>
+
+    <label for="message">Report:</label><br>
+    <textarea id="message" name="message" rows="5" placeholder="Your Complaint" required></textarea><br><br>
+
+    <label for="message">Locality</label><br>
+    <textarea id="message" name="message" rows="6" placeholder="Address" required></textarea><br><br>
+
+    
+    <label for="nearby police station">nearby police station</label><br>
+    <input type="nearby police station" id="nearby police station" name="" placeholder="nearby police station" required><br><br>
+
+    
+
+    <input type="submit" value="Submit" style="background-color: #005599; color: white; padding: 10px 20px; border: none; border-radius: 5px;">
+  </form>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          alert('You are being redirected to ' + this.textContent);
+        });
+      });
+    });
+    document.querySelector('#budget form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your submission! We will review your inquiry or suggestion.');
+    });
+    document.querySelector('.login-form').addEventListener('submit', function(event) {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            
+            if(username === "" || password === "") {
+                alert("Please enter both username and password.");
+                event.preventDefault();
+            } else {
+                alert("Login successful!");
+            }
+        });
+</script>
+</body>
+</html>

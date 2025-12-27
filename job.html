@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>City Jobs</title>
+  <link rel="stylesheet" href="job.css">
+</head>
+<body style="background-image: url('image copy.png'); background-size: cover; background-repeat: no-repeat;">
+  <header>
+    <h1 style="text-align: center; background-color: #003366; color: white; padding: 20px;">
+      City Job Opportunities
+    </h1>
+    <nav style="text-align: center; background-color: #005599; padding: 10px;">
+      <a href="index.html" style="color: white; margin: 0 15px;">Home</a>
+      <a href="cont.html" style="color: white; margin: 0 15px;">Contact</a>
+      <a href="eme.html" style="color: white; margin: 0 15px;">Emergency</a>
+    </nav>
+  </header>
+
+  <main style="padding: 20px;">
+    <section>
+      <h2>Join Our Team</h2>
+      <p>We’re looking for passionate individuals to help shape the future of our city. Explore current openings and apply to be part of our dedicated workforce.</p>
+    </section>
+
+    <section>
+      <h2>Current Openings</h2>
+      <ul>
+        <li>👷 Civil Engineer – <a href="#">Apply Now</a></li>
+        <li>🧹 Sanitation Worker – <a href="#">Apply Now</a></li>
+        <li>🧑‍💻 IT Support Technician – <a href="#">Apply Now</a></li>
+        <li>📚 Library Assistant – <a href="#">Apply Now</a></li>
+        <li>👮 Police Officer – <a href="#">Apply Now</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Application Process</h2>
+      <p>All applications must be submitted online. Shortlisted candidates will be contacted for interviews. Please ensure your resume is up to date and includes relevant experience.</p>
+    </section>
+
+    <section>
+      <h2>Need Help?</h2>
+      <p>If you have questions about the application process, feel free to <a href="cont.html">contact our HR department</a>.</p>
+    </section>
+  </main>
+
+  <footer style="text-align: center; background-color: #003366; color: white; padding: 10px;">
+    &copy; 2025 City Management Portal. All rights reserved.
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          alert('You are being redirected to ' + this.textContent);
+        });
+      });
+    });
+    document.querySelector('#budget form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your submission! We will review your inquiry or suggestion.');
+    });
+    document.querySelector('.login-form').addEventListener('submit', function(event) {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var captcha = document.getElementById('captcha').value;
+            var validCaptcha = 'jatinfu';
+    
+            if (username === '' || password === '') {
+                alert('Username and Password cannot be blank.');
+                event.preventDefault();
+            } else if (captcha !== validCaptcha) {
+                alert('Incorrect verification code.');
+                event.preventDefault();
+            }
+        });
+        document.querySelector('.login-form').addEventListener('reset', function() {
+          
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('captcha').value = '';
+        });
+        document.getElementById('username').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }   
+        });
+        document.getElementById('password').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('captcha').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value === 'jatinfu') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('remember').addEventListener('change', function() {
+            if (this.checked) {
+                console.log('Remember Me checked');
+            } else {
+                console.log('Remember Me unchecked');
+            }
+        });
+        document.querySelector('#budget form').addEventListener('reset', function() {
+            document.getElementById('dept').value = '';
+            document.getElementById('message').value = '';
+        });
+
+  </script>
+</body>
+</html>

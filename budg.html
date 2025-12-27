@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+#budget {
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+#budget h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+#budget p {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+
+#budget table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#budget th,
+#budget td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#budget th {
+  background-color: #007bff;
+  color: white;
+}
+
+
+#budget form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#budget label {
+  font-weight: bold;
+}
+
+#budget input[type="text"],
+#budget textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#budget button {
+  align-self: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#budget button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  #budget {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  #budget table,
+  #budget th,
+  #budget td {
+    font-size: 0.9rem;
+  }
+}
+    </style>
+</head>
+<body style="background-image: url('image\ copy.png'); background-repeat: no-repeat; background-size: cover;">
+    <section id="budget">
+  <h2>Budget Information</h2>
+  <p>Explore how city funds are allocated across departments and initiatives. Transparency is our priority.</p>
+
+  <table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Department</th>
+        <th>Allocated Budget</th>
+        <th>Usage Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Infrastructure</td>
+        <td>₹50,00,000</td>
+        <td>75% Utilized</td>
+      </tr>
+      <tr>
+        <td>Healthcare</td>
+        <td>₹30,00,000</td>
+        <td>60% Utilized</td>
+      </tr>
+      <tr>
+        <td>Education</td>
+        <td>₹20,00,000</td>
+        <td>45% Utilized</td>
+      </tr>
+      <tr>
+        <td>Emergency Services</td>
+        <td>₹15,00,000</td>
+        <td>80% Utilized</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form style="margin-top: 20px;">
+    <h3>Submit a Budget Inquiry or Suggestion</h3>
+    <label for="dept">Department:</label>
+    <input type="text" id="dept" name="dept" placeholder="e.g., Healthcare" />
+
+    <label for="message">Your Message:</label>
+    <textarea id="message" name="message" rows="4" placeholder="Enter your suggestion or question..."></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+  <script>
+    document.querySelector('#budget form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your submission! We will review your inquiry or suggestion.');
+    });
+    document.querySelector('#budget form').addEventListener('reset', function() {
+      document.getElementById('dept').value = '';
+      document.getElementById('message').value = '';
+    });
+  </script>
+</section>
+</body>
+</html>

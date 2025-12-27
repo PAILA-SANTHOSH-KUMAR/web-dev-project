@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>City Management Portal</title>
+  <link rel="stylesheet" href="city.css">
+</head>
+<body style="background-image: url('image\ copy.png'); background-repeat: no-repeat; background-size: cover;">
+  <header>
+    <div class="cityscape">
+      <h1 style="text-align: center; color:aliceblue;">Welcome to City Management Portal</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="legis.html">Legislative Affairs</a></li>
+        <li><a href="news.html">City News</a></li>
+        <li><a href="job.html">City Jobs</a></li>
+        <li><a href="#">Community Events</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Places</a></li>
+        <li><a href="eme.html">Emergency Management</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="services">
+    <div class="service-icon"><a href="req.html">📝 Request Servicesa</a>
+    </div>
+    <div class="service-icon"><a href="cont.html">📞 Contact Us</a></div>
+  </section>
+
+  <section class="calendar">
+    <h2>Current News & Upcoming Events</h2>
+    <ul>
+      <li>January 01: Event That Spans Across Months</li>
+      <li>January 01: Event That Spans Entire Month</li>
+      <li>January 04: All Day Event</li>
+    </ul>
+  </section>
+
+  <footer>
+    <ul>
+      <li><a href="budg.html">Budget Information</a></li>
+      <li><a href="licen.html">Licensing & Permitting</a></li>
+      <li><a href="eme.html">Emergency Management</a></li>
+      <li><a href="police.html">Police Department</a></li>
+    </ul>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          alert('You are being redirected to ' + this.textContent);
+        });
+      });
+    });
+    document.querySelector('#budget form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your submission! We will review your inquiry or suggestion.');
+    });
+    document.querySelector('.login-form').addEventListener('submit', function(event) {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var captcha = document.getElementById('captcha').value;
+      var validCaptcha = 'jatinfu';
+
+      if (username === '' || password === '') {
+          alert('Username and Password cannot be blank.');
+          event.preventDefault();
+      } else if (captcha !== validCaptcha) {
+          alert('Incorrect verification code.');
+          event.preventDefault();
+      }
+    });
+    document.querySelector('.login-form').addEventListener('reset', function() {
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+      document.getElementById('captcha').value = '';
+    });
+    document.getElementById('username').addEventListener('input', function() {
+      var small = this.nextElementSibling;
+      if (this.value !== '') {
+          small.style.display = 'none';
+      } else {
+          small.style.display = 'block';
+      }
+    });
+    document.getElementById('password').addEventListener('input', function() {
+      var small = this.nextElementSibling;
+      if (this.value !== '') {
+          small.style.display = 'none';
+      } else {
+          small.style.display = 'block';
+      }
+    });
+    document.getElementById('captcha').addEventListener('input', function() {
+      var small = this.nextElementSibling;
+      if (this.value === 'jatinfu') {
+          small.style.display = 'none';
+      } else {
+          small.style.display = 'block';
+      }
+    });
+    document.getElementById('remember').addEventListener('change', function() {
+      if (this.checked) {
+          console.log('Remember Me checked');
+      } else {
+          console.log('Remember Me unchecked');
+      }
+    });
+    document.querySelector('.login-form button[type="submit"]').addEventListener('click', function() {
+      console.log('Login button clicked');
+    });
+    document.querySelector('#budget form').addEventListener('reset', function() {
+      document.getElementById('dept').value = '';
+      document.getElementById('message').value = '';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+.cityscape {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+    nav ul li {
+      float: left;
+    }
+    nav ul li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    nav ul li a:hover {
+      background-color: #111;
+    }
+    .services {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+    .service-icon {
+      font-size: 24px;
+      text-align: center;
+      color: white;
+    }
+    .calendar {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      margin: 20px;
+      border-radius: 5px;
+    }
+    footer ul {
+      list-style-type: none;
+      padding: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      text-align: center;
+    }
+    footer ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    footer ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    footer ul li a:hover {
+      text-decoration: underline;
+    }
+    .social-icons {
+      margin-top: 10px;
+    }

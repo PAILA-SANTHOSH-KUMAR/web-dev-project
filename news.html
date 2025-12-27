@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>City News</title>
+  <link rel="stylesheet" href="news.css">
+</head>
+<body style="background-image: url('image copy.png'); background-size: cover; background-repeat: no-repeat;">
+  <header>
+    <h1 style="text-align: center; background-color: #003366; color: white; padding: 20px;">
+      City News & Updates
+    </h1>
+    <nav style="text-align: center; background-color: #005599; padding: 10px;">
+      <a href="index.html" style="color: white; margin: 0 15px;">Home</a>
+      <a href="cont.html" style="color: white; margin: 0 15px;">Contact</a>
+      <a href="eme.html" style="color: white; margin: 0 15px;">Emergency</a>
+    </nav>
+  </header>
+
+  <main style="padding: 20px;">
+    <section>
+      <h2>Latest Announcements</h2>
+      <ul>
+        <li>📰 November 15: New waste segregation policy implemented across all wards.</li>
+        <li>📰 November 10: City library opens new digital learning center.</li>
+        <li>📰 November 05: Road repairs scheduled for NH-65 bypass starting next week.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Public Notices</h2>
+      <ul>
+        <li>📢 Water supply will be interrupted in Zone 3 on November 18 due to maintenance.</li>
+        <li>📢 Citizens are invited to attend the Smart City planning workshop on November 20.</li>
+        <li>📢 Property tax deadline extended to November 30.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Submit Your News</h2>
+      <p>Have something to share with the community? Submit your local news or event for review.</p>
+      <a href="req.html" style="display: inline-block; margin-top: 10px; background-color: #005599; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Submit News</a>
+    </section>
+  </main>
+
+  <footer style="text-align: center; background-color: #003366; color: white; padding: 10px;">
+    &copy; 2025 City Management Portal. All rights reserved.
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          alert('You are being redirected to ' + this.textContent);
+        });
+      });
+    });
+    document.querySelector('#budget form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your submission! We will review your inquiry or suggestion.');
+    });
+    document.querySelector('.login-form').addEventListener('submit', function(event) {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var captcha = document.getElementById('captcha').value;
+          
+        });
+        document.querySelector('.emergency-form form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for reporting the emergency. Authorities will be notified shortly.');
+    });
+        document.querySelector('.login-form').addEventListener('reset', function() {
+           
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('captcha').value = '';
+        });
+        document.getElementById('username').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }   
+        });
+        document.getElementById('password').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value !== '') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('captcha').addEventListener('input', function() {
+            var small = this.nextElementSibling;
+            if (this.value === 'jatinfu') {
+                small.style.display = 'none';
+            } else {
+                small.style.display = 'block';
+            }
+        });
+        document.getElementById('remember').addEventListener('change', function() {
+      if (this.checked) {
+          alert('You will be remembered on this device.');
+      } else {
+          alert('You will not be remembered on this device.');
+      } 
+    });
+  </script>
+</body>
+</html>

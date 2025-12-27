@@ -1,0 +1,120 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
+
+header h1 {
+  font-size: 2em;
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: #005599;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+section h2 {
+  color: #003366;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+section p,
+section ul {
+  font-size: 1em;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #005599;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: #003366;
+}
+
+a[href="req.html"],
+a[href*="Apply Now"] {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #005599;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+a[href="req.html"]:hover,
+a[href*="Apply Now"]:hover {
+  background-color: #003366;
+}
+footer {
+  text-align: center;
+  background-color: #003366;
+  color: white;
+  padding: 10px;
+  font-size: 0.9em;
+}
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  section h2 {
+    font-size: 1.3em;
+  }
+}
